@@ -125,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
 
 # My settings
 LOGIN_URL = '/users/login/'
@@ -144,11 +145,14 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # All hosts allowed
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['learning-log-crash-course']
+
+    DEBUG = False
 
     # Config static resources
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     STATIC_ROOT = 'staticfiles'
+    
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
